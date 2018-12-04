@@ -96,7 +96,16 @@ public class MainActivity extends AppCompatActivity
             //5. Commit a transaction
             fragmentTransaction.commit();
         } else if (id == R.id.nav_gallery) {
-
+            //1. Create a Fragment manager
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            //2. Create a frtransaction
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            //3. Create an instance of a fragment
+            GalleryFragment fragment = new GalleryFragment();
+            //4. Perform fragment transaction
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            //5. Commit a transaction
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

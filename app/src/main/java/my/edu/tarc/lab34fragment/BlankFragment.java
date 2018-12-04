@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -23,7 +25,19 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+        final TextView textViewMessage;
+        Button buttonShowMessage;
+        View view ;
+        view = inflater.inflate(R.layout.fragment_blank, container, false);
+        textViewMessage = view.findViewById(R.id.textViewMessage);
+        buttonShowMessage = view.findViewById(R.id.buttonShowMessage);
+        buttonShowMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textViewMessage.setText("Hello Import Fragment");
+            }
+        });
+        return view;
     }
 
 }
